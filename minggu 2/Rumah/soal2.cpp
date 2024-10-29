@@ -36,3 +36,44 @@ int main() {
 
     return 0;
 }
+
+#include <iostream> // Include the iostream library for input/output operations
+
+using namespace std; // Use the standard namespace
+
+int main() {
+    int n, i;      // Declare n for the number of elements, i for loop counter
+    int max;        // Declare max to store the maximum value
+    int *ptr, *ptrMax; // Declare pointers ptr and ptrMax
+
+    cout << "Masukkan jumlah nilai: "; // Prompt the user to enter the number of values
+    cin >> n;                         // Read the number of values from the user
+
+    int data[n]; // Declare a variable-length array to store the data (Note: VLAs are non-standard)
+
+    // Input data
+    for (i = 0; i < n; i++) {
+        cout << "Masukkan nilai ke-" << i + 1 << ": "; // Prompt for each value
+        cin >> data[i];                               // Read and store each value in the array
+    }
+
+    // Initialize pointer and maximum value
+    ptr = data;     // Point ptr to the first element of the array
+    ptrMax = ptr;    // Point ptrMax to the first element (initial assumption for maximum)
+    max = *ptr;    // Initialize max with the value of the first element
+
+    // Find the maximum value
+    for (i = 1; i < n; i++) {
+        ptr++;          // Move ptr to the next element
+        if (*ptr > max) {  // Check if the current element is greater than the current maximum
+            max = *ptr;    // Update max with the new maximum value
+            ptrMax = ptr;   // Update ptrMax to point to the new maximum element
+        }
+    }
+
+    // Display the maximum value and its address
+    cout << "Nilai maksimum: " << max << endl;                // Print the maximum value
+    cout << "Alamat nilai maksimum: " << (void*)ptrMax << endl; // Print the address of the maximum value (casted to void*)
+
+    return 0; // Indicate successful program execution
+}
