@@ -1,11 +1,10 @@
 #include <iostream>
-#include <cstring> // Tambahkan header ini
+#include <cstring> 
 
 using namespace std;
 
 int main() {
     int n;
-
     cout << "================================" << endl;
     cout << "        Soal 1. Tugas Pratikum 2" << endl;
     cout << "                30/9/2024:" << endl;

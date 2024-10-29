@@ -1,3 +1,6 @@
+//Jika nums = [2, 5, 7, 9, 12] dan target = 8, fungsi searchInsert akan mengembalikan 3.
+//Ini karena 8 seharusnya disisipkan pada indeks 3 agar array tetap terurut.
+
 #include <iostream>
 
 using namespace std;
@@ -32,10 +35,8 @@ int main() {
     for (int i = 0; i < n; i++) {
         cin >> nums[i];
     }
-
     cout << "Masukkan target: ";
     cin >> target;
-
     int index = searchInsert(nums, n, target);
 
     cout << "Output: " << index << endl;
