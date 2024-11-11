@@ -1,5 +1,6 @@
 #include <iostream>
 
+
 using namespace std;
 struct Pasangan {
   int i;
